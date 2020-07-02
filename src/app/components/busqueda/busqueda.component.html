@@ -1,0 +1,14 @@
+<h1>Buscando <small>{{termino}}</small></h1>
+<hr>
+
+<div class="card-columns" *ngIf="showMessage === false">
+    <app-heroe-tarjeta [heroe]="heroe" [id]="heroe.id" *ngFor="let heroe of heroes" (heroeSeleccionado)=verHeroe($event)></app-heroe-tarjeta>
+</div>
+
+<div *ngIf="showMessage === true" class="row animated fadeIn fast">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            <p>No existe resultados para su búsqueda: {{termino}} </p>
+        </div>
+    </div>
+</div>
